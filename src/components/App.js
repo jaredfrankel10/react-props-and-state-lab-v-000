@@ -18,15 +18,15 @@ class App extends React.Component {
   adoptPet = (petId) => {
        this.state.adoptedPets.push(petId);
      }
-   
+
      findPets = () => {
        const type = this.state.filters["type"];
        let url = "/api/pets";
-   
+
        if(type !== "all") {
-         url += "?type=" + type; 
+         url += "?type=" + type;
        }
-   
+
        fetch(url)
            .then(response => {
              if (response.ok) {
@@ -37,7 +37,7 @@ class App extends React.Component {
            })
            .then(pets => this.setState({ pets }))
      }
-   
+
      changeType = (type) => {
        this.state.filters["type"] = type;
      }
