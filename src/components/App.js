@@ -50,11 +50,11 @@ class App extends React.Component {
         <div className="ui container">
           <div className="ui grid">
             <div className="four wide column">
-              <Filters />
+            <Filters filters={this.state.filters} onFindPetsClick={this.findPets} onChangeType={this.changeType}/>
             </div>
             <div className="twelve wide column">
               <PetBrowser />
-            </div>
+<PetBrowser pets={this.state.pets} adoptedPets={this.state.adoptedPets} onAdoptPet={this.adoptPet} />
           </div>
         </div>
       </div>
